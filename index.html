@@ -23,7 +23,9 @@
             <li>
               <a class="link current menu-link" href="./index.html">Студия</a>
                 </li>
-                <li><a class="link menu-link" href="./portfolio.html">Портфолио</a></li>
+                <li>
+                    <a class="link menu-link" href="./portfolio.html">Портфолио</a>
+                </li>
                 <li><a class="link menu-link" href="">Контакты</a></li>
                 </ul>
             </nav>
@@ -50,7 +52,9 @@
         <section class="main-section hero-container">
             <h1 class="main-info title">Эффективные решения для вашего бизнеса</h1>
             <div class="main-link-item">
-                <button type="button" class="main-link " data-modal-open>Заказать услугу</button>
+                <button type="button" class="main-link" data-modal-open>
+            Заказать услугу
+          </button>
             </div>
         </section>
         <!--Секция приимущества студии-->
@@ -350,6 +354,7 @@
             </ul>
           </address>
         </div>
+
         <!--футер соцсети-->
         <div class="footer-social">
           <p class="footer-info">присоединяйтесь</p>
@@ -388,21 +393,39 @@
                 </li>
                 </ul>
             </div>
+            <!--футер подпишись-->
+            <div class="footer-form">
+                <form class="footer-field" autocomplete="on">
+                    <div class="form-field-email">
+                        <label for="" class="email-label">
+                Подпишитесь на рассылку
+              </label>
+                        <input class="email-input" type="text" id="email" name="email " placeholder="E-mail" />
+                    </div>
+                    <button type="submit" class="botton-field">Подписаться 
+                        <svg class="fiel-mail-sprite" width="24" height="24">
+                        <use href="./images/icons.svg#field"></use>
+                      </svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </footer>
+
     <!-- модалка -->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <p></p>
             <button type="button" class="button-modal" data-modal-close>
-                <div class="modal-icon">
-                    <svg class="modal-icon-item" width="11px" height="11px">
-                     <use href="./images/icons.svg#icon-x"></use>
-                    </svg>
-                </div>
-            </button>
+          <div class="modal-icon">
+            <svg class="modal-icon-item" width="11px" height="11px">
+              <use href="./images/icons.svg#icon-x"></use>
+            </svg>
+          </div>
+        </button>
         </div>
     </div>
+
     <!-- скрипт -->
     <script>
         (() => {
@@ -421,6 +444,5 @@
         })();
     </script>
 </body>
-
 
 </html>
