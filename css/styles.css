@@ -627,7 +627,8 @@ nav a.logo {
 }
 
 .footer-social {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .icon-item-footer {
@@ -649,7 +650,7 @@ nav a.logo {
 
 .footer-social .footer-info {
     padding-bottom: 20px;
-    padding-top: 12px;
+    margin-top: 12px;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.2;
