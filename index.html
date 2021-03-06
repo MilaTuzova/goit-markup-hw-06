@@ -402,7 +402,7 @@
               </label>
                         <input class="email-input" type="text" id="email" name="email " placeholder="E-mail" />
                     </div>
-                    <button type="submit" class="botton-field">Подписаться 
+                    <button type="submit" class="button-field">Подписаться 
                         <svg class="fiel-mail-sprite" width="24" height="24">
                         <use href="./images/icons.svg#field"></use>
                       </svg>
@@ -423,7 +423,33 @@
             </svg>
           </div>
         </button>
+            <p class="modal-text">Оставьте свои данные, мы вам перезвоним</p>
+            <form class="modal-field">
+
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name" placeholder="" autocomplete="" />
+
+                <label for="phone">Телефон</label>
+                <input type="tel" name="phone" id="phone" placeholder="" />
+
+                <label for="email">Почта</label>
+                <input type="email" name="email" id="email" autocomplete="" />
+
+                <label for="text">Комментарий</label>
+                <input type="text" name="text" id="text" placeholder="Введите текст" />
+
+                <label> 
+                <input type="checkbox" name="hobby" value="" checked />
+                Соглашаюсь с рассылкой и принимаю <span>Условия договора</span> 
+                </label>
+
+
+                <button type="submit" class="button-modal-send">Отправить</button>
+            </form>
         </div>
+
+
+
     </div>
 
     <!-- скрипт -->
