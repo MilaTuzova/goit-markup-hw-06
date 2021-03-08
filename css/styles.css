@@ -1081,6 +1081,10 @@ button:focus {
     border-color: var(--accent-color);
 }
 
+.checkbox:focus+.modal-card-check {
+    border-color: var(--accent-color);
+}
+
 .button-modal-send {
     display: flex;
     justify-content: center;
