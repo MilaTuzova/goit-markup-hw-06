@@ -19,7 +19,7 @@ html {
     --social-color: #afb1b8;
     --border-color: #afb1b8;
     --cubic-time: cubic-bezier(0.4, 0, 0.2, 1);
-    --time-duration: 250ms;
+    --time-duration: 2500ms;
     --border-color: rgba(33, 33, 33, 0.2);
     --placeholder-color: rgba(117, 117, 117, 0.5);
 }
@@ -947,22 +947,27 @@ button:focus {
     text-align: center;
 }
 
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .input-form {
+    position: relative;
     width: 448px;
     height: 40px;
     padding-left: 42px;
+    cursor: pointer;
     border: 1px solid var(--border-color);
     border-radius: 4px;
+    transition: border-color var(--time-duration) var(--cubic-time);
 }
 
-textarea {
-    width: 448px;
-    height: 120px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    resize: none;
-    padding: 16px 16px;
+.form:hover .input-form,
+.form:focus .input-form {
+    border-color: var(--accent-color);
 }
 
 .label-name {
@@ -975,12 +980,56 @@ textarea {
     color: var(--notactiv-color);
 }
 
-textarea::placeholder {
+.modal-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(12px, -11px);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    fill: var(--primary-text-color);
+    transition: fill var(--time-duration) var(--cubic-time);
+}
+
+.input-form:hover+.modal-card,
+.input-form:focus+.modal-card {
+    fill: var(--accent-color);
+}
+
+.modal-card:hover,
+.modal-card:focus-within {
+    fill: var(--accent-color);
+}
+
+.form-textarea {
+    width: 448px;
+    height: 120px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: none;
+    padding: 16px 16px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.1428;
     letter-spacing: 0.01em;
+    transition: border-color var(--time-duration) var(--cubic-time);
+}
+
+.form-textarea::placeholder {
     color: var(--placeholder-color);
+    transition: color var(--time-duration) var(--cubic-time);
+}
+
+.form-textarea:hover,
+.form-textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.form:hover .form-textarea::placeholder,
+.form:focus .form-textarea::placeholder {
+    color: var(--accent-color);
 }
 
 .agreement {
@@ -991,6 +1040,11 @@ textarea::placeholder {
     height: 24px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.modal-card-chech {
+    background-color: var(--primary-white-color);
+    border: 1px solid var(--primary-text-color);
 }
 
 input[type='checkbox'] {
