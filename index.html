@@ -423,26 +423,25 @@
             </svg>
           </div>
         </button>
-            <p class="modal-text">Оставьте свои данные, мы вам перезвоним</p>
+
             <form class="modal-field">
+                <p class="js-speaker-form modal-text">Оставьте свои данные, мы вам перезвоним</p>
+                <label for="name" class="label-name">Имя</label>
+                <input type="text" name="name" id="name" class="input-form" placeholder="" />
 
-                <label for="name">Имя</label>
-                <input type="text" name="name" id="name" placeholder="" autocomplete="" />
+                <label for="phone" class="label-name">Телефон</label>
+                <input type="tel" name="phone" id="phone" class="input-form" />
 
-                <label for="phone">Телефон</label>
-                <input type="tel" name="phone" id="phone" placeholder="" />
+                <label for="mail" class="label-name">Почта</label>
+                <input type="email" name="email" id="mail" class="input-form" />
 
-                <label for="email">Почта</label>
-                <input type="email" name="email" id="email" autocomplete="" />
+                <label for="comment" class="label-name">Комментарий</label>
+                <textarea name="textarea" id="comment" cols="" rows="" placeholder="Введите текст"></textarea>
 
-                <label for="text">Комментарий</label>
-                <input type="text" name="text" id="text" placeholder="Введите текст" />
-
-                <label> 
-                <input type="checkbox" name="hobby" value="" checked />
-                Соглашаюсь с рассылкой и принимаю <span>Условия договора</span> 
-                </label>
-
+                <div class="agreement">
+                    <input type="checkbox" id="agree" name="" value="" />
+                    <labe for="agree" class="label-checkbox">Соглашаюсь с рассылкой и принимаю <a class="doc" href="">Условия договора</a></labe>
+                </div>
 
                 <button type="submit" class="button-modal-send">Отправить</button>
             </form>
@@ -467,6 +466,19 @@
             function toggleModal() {
                 refs.modal.classList.toggle('is-hidden');
             }
+        })();
+    </script>
+    <script>
+        (() => {
+            document
+                .querySelector('.js-speaker-form')
+                .addEventListener('submit', e => {
+                    e.preventDefault();
+
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log('${name}: ${value}'),
+                    );
+                });
         })();
     </script>
 </body>
