@@ -1047,10 +1047,17 @@ button:focus {
 }
 
 .checkbox {
-    appearance: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
 }
 
 .label-checkbox {
+    display: flex;
+    justify-content: space-between;
+    width: 423px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.7;
