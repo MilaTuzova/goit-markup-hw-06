@@ -1067,6 +1067,8 @@ button:focus {
     position: absolute;
     top: 4px;
     left: 0;
+    width: 16px;
+    height: 15px;
     background-color: var(--primary-white-color);
     fill: var(--primary-white-color);
     border: 2px solid var(--primary-text-color);
