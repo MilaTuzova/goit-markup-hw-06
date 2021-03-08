@@ -1081,7 +1081,8 @@ button:focus {
     border-color: var(--accent-color);
 }
 
-.checkbox:focus+.modal-card-check {
+.checkbox:focus+.modal-card-check,
+.checkbox:hover+.modal-card-check {
     border-color: var(--accent-color);
 }
 
