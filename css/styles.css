@@ -992,13 +992,13 @@ button:focus {
     transition: fill var(--time-duration) var(--cubic-time);
 }
 
-.input-form:hover+.modal-card,
-.input-form:focus+.modal-card {
+.form:focus-within .modal-card,
+.form:hover .modal-card {
     fill: var(--accent-color);
 }
 
 .modal-card:hover,
-.modal-card:focus-within {
+.modal-card:focus {
     fill: var(--accent-color);
 }
 
@@ -1028,12 +1028,16 @@ button:focus {
 }
 
 .form:hover .form-textarea::placeholder,
-.form:focus .form-textarea::placeholder {
+.form:focus-within .form-textarea::placeholder {
     color: var(--accent-color);
 }
 
+
+/* чекбокс */
+
 .agreement {
-    display: inline-flex;
+    position: relative;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 425px;
@@ -1042,14 +1046,8 @@ button:focus {
     margin-left: auto;
 }
 
-.modal-card-chech {
-    background-color: var(--primary-white-color);
-    border: 1px solid var(--primary-text-color);
-}
-
-input[type='checkbox'] {
-    width: 16px;
-    height: 15px;
+.checkbox {
+    appearance: none;
 }
 
 .label-checkbox {
@@ -1057,11 +1055,30 @@ input[type='checkbox'] {
     font-size: 14px;
     line-height: 1.7;
     color: var(--notactiv-color);
+    padding-left: 16px;
 }
 
 .doc {
     color: var(--accent-color);
     text-decoration: underline;
+}
+
+.modal-card-check {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 15px;
+    background-color: var(--primary-white-color);
+    fill: var(--primary-white-color);
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+    transition: background-color var(--time-duration) var(--cubic-time), border-color var(--time-duration) var(--cubic-time);
+}
+
+.checkbox:checked+.modal-card-check {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .button-modal-send {
@@ -1079,12 +1096,12 @@ input[type='checkbox'] {
     border-radius: 4px;
     background-color: var(--accent-color);
     color: var(--button-color);
-    transition: color var(--time-duration) var(--cubic-time);
+    transition: background-color var(--time-duration) var(--cubic-time), color var(--time-duration) var(--cubic-time);
 }
 
 .button-modal-send:focus,
 .button-modal-send:hover {
-    background-color: var(--button-color);
+    background-color: var(--border-color);
     color: var(--accent-color);
-    border: 1px solid var(--button-color);
+    border: 1px solid var(--accent-color);
 }
